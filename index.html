@@ -3,18 +3,19 @@
   <head>
     <title>My Discord Accounts</title>
     <style>
-      body {
-        font-family: Comic Sans MS, cursive, sans-serif;
-      }
-      
       button {
         background-color: #ADD8E6; 
         color: white;
         font-size: 20px;
         padding: 10px 20px;
-        border: none;
+        border: 1.3px solid #000000;
         border-radius: 5px;
         cursor: pointer;
+      }
+
+      button:hover {
+        border: 1.5px solid #000000;
+        transition: border-color 0.3s ease-in-out;
       }
     </style>
   </head>
@@ -28,9 +29,9 @@
     <button onclick="openDiscord()">Click me</button>
     
     <script>
-    function openDiscord() {
-      window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
-    }
+      function openDiscord() {
+        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
+      }
     </script>
   </body>
 </html>
