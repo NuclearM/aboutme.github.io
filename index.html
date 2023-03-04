@@ -64,6 +64,8 @@
           return false; // Prevent form submission
         } else {
           alert("Incorrect password, please try again.");
+          // Hide content if password is incorrect
+          document.getElementById("content").style.display = "none";
           return false; // Prevent form submission
         }
       }
