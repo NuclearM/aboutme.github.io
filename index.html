@@ -4,7 +4,7 @@
     <title>My Discord Accounts</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/9638/9638181.png">
     <style>
-           body {
+      body {
         font-size: 200%;
       }
       button {
@@ -30,16 +30,42 @@
   </head>
   <body>
     <h1>My Discord Accounts</h1>
-    <ul>
-      <li>Nuclear#0001 536566484990951475 [termed]</li>
-      <li>CheesyAccs#1317 1071046429264597073 [termed]</li>
-      <li>Nuglear#3323 802589957398331432 [termed]</li>
-      <li>WorstSakis#5035 1081167326713495642</li>
-
-    </ul>
-    <button onclick="openDiscord()">Click me</button>
+    
+    <!-- Password input form -->
+    <form onsubmit="return checkPassword()">
+      <label for="password">Enter password:</label>
+      <input type="password" id="password">
+      <button type="submit">Submit</button>
+    </form>
+    
+    <div id="content" style="display: none;">
+      <ul>
+        <li>Nuclear#0001 536566484990951475 [termed]</li>
+        <li>CheesyAccs#1317 1071046429264597073 [termed]</li>
+        <li>Nuglear#3323 802589957398331432 [termed]</li>
+        <li>WorstSakis#5035 1081167326713495642</li>
+      </ul>
+      <button onclick="openDiscord()">Click me</button>
+    </div>
     
     <script>
+      // Password to access content
+      const password = "thegreatsakis";
+
+      function checkPassword() {
+        // Get password input value
+        const passwordInput = document.getElementById("password").value;
+        
+        if (passwordInput === password) {
+          // Show content if password is correct
+          document.getElementById("content").style.display = "block";
+          return false; // Prevent form submission
+        } else {
+          alert("Incorrect password, please try again.");
+          return false; // Prevent form submission
+        }
+      }
+
       function openDiscord() {
         window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
       }
