@@ -65,23 +65,32 @@
     </div>
     
     <script>
-      // Password to access content
-      const password = "thegreatsakis";
-
       function checkPassword() {
         // Get password input value
         const passwordInput = document.getElementById("password").value;
-        
-        if (passwordInput === password) {
-          // Show content if password is correct
-          document.getElementById("content").style.display = "block";
-          return false; // Prevent form submission
-        } else {
-          alert("Incorrect password, please try again.");
-          // Hide content if password is incorrect
-          document.getElementById("content").style.display = "none";
-          return false; // Prevent form submission
-        }
+
+        // Make an AJAX request to read the password from the file
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            const passwordFromFile = this.responseText.trim();
+
+            if (passwordInput === passwordFromFile) {
+              // Show content if password is correct
+              document.getElementById("content").style.display = "block";
+              return false; // Prevent form submission
+            } else {
+              alert("Incorrect password, please try again.");
+              // Hide content if password is incorrect
+              document.getElementById("content").style.display = "none";
+              return false; // Prevent form submission
+            }
+          }
+        };
+        xhr.open("GET", "password.txt");
+        xhr.send();
+
+        return false; // Prevent form submission
       }
 
       function openDiscord() {
