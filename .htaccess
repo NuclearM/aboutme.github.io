@@ -1,3 +1,4 @@
-RewriteEngine On
-RewriteCond %{HTTP_REFERER} !^https://(www\.)?nukeaccs.xyz\.com [NC]
-RewriteRule ^842982498428249842904289\.txt$ - [F]
+<Files "842982498428249842904289.txt">
+  Order deny,allow
+  Deny from all
+</Files>
