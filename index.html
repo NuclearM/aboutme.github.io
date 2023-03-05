@@ -1,97 +1,140 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Discord Accounts</title>
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/9638/9638181.png">
-    <style>
-      body {
-        font-size: 200%;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-      }
-      button {
-        background-color: #ADD8E6; 
-        color: white;
-        font-size: 20px;
-        padding: 10px 20px;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        cursor: pointer;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-      }
 
-      button:hover {
-        border: 1.3px solid #000000;
-        transition: border-color 0.3s ease-in-out;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="/logedasdds/login.js"></script>
+</head>
 
-      button:focus {
-        outline: none;
-        border: 1.3px solid #000000;
-      }
+<body>
+  <div class="list">
+    <ol id="list" style="display: none; font-size: 150%; font-family:  'Comic Sans MS', cursive, sans-serif;">
+      <li>Nuclear#0001 536566484990951475 [termed]</li>
+      <li>CheesyAccs#1317 1071046429264597073 [termed]</li>
+      <li>Nuglear#3323 802589957398331432 [termed]</li>
+      <li>WorstSakis#5035 1081167326713495642</li>
+    </ol>
+  </div>
+   <form id="container">
+
+        <h3 id="Heading">Sign In</h3>
+        <label>Username:</label><div class="row">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="100%"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></div><input type="text" name="username" placeholder="Username" required id="username"></div>
+        <label>Password:</label>
+        <div class="row">
+        
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30px"><path d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg></div><input type="password" name="password" placeholder="Password" required id="password"></div>
+        <a style="" id="signbtn" onclick="check()">Sign In</a>
+      </form>
       
-      input[type="password"] {
-        font-size: 20px;
-        padding: 10px;
-        border: 1px solid #000000;
-        border-radius: 5px;
-        width: 180px;
-        font-family: "Comic Sans MS", cursive, sans-serif;
-      }
-
-      input[type="password"]:focus {
-        outline: none;
-        border: 1.3px solid #000000;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>My Discord Accounts</h1>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    height: 100vh;
+    background-color: #343a40;
+}
+#container{
+    margin:auto;
+    display: flex;
+    color:#f8f9fa;
+    flex-direction: column;
+    width:500px;
+    box-shadow: 1px 2px 71px -6px rgba(0,0,0,0.67);
+    height:fit-content;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #212529;
+    padding:50px 20px;
+    border-radius: 10px;
+}
+#Heading{
+    padding:10px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 900;
+}
+label{
+    font-size: 1.2em;
+    font-weight: 500;
+    margin:10px 0px;
+}
+input{
+    padding:10px;
+    border-top-right-radius: 10px;
+    height: 50px;
+    border: none;
+    background-color: #6c757d;
+    border-bottom-right-radius:10px;
+    font-size:19.2px;
     
-    <form onsubmit="return checkPassword()">
-      <label for="password">Enter password:</label>
-      <input type="password" id="password">
-      <button type="submit">Submit</button>
-    </form>
-    
-    <div id="content" style="display: none;">
-      <ul>
-        <li>Nuclear#0001 536566484990951475 [termed]</li>
-        <li>CheesyAccs#1317 1071046429264597073 [termed]</li>
-        <li>Nuglear#3323 802589957398331432 [termed]</li>
-        <li>WorstSakis#5035 1081167326713495642</li>
-      </ul>
-      <button onclick="openDiscord()">Click me</button>
-    </div>
-    
-    <script>
-      function checkPassword() {
-        const passwordInput = document.getElementById("password").value;
+    color:#f8f9fa;
+}
+input:focus{
+    outline: none;
+    background-color: none;
+}
+input::placeholder{
+    color:#f8f9fa;
+    font-size: 19.2px;
+}
+.row{
+    width:100%;
+    height:fit-content;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 50px;
+}
+.icon{
+    height: 50px;
+    margin-right:1px;
+    background-color: #6c757d;
+    border-top-left-radius: 10px;
+    padding:10px;
+    border-bottom-left-radius: 10px;
+    fill:white;
+}
+a{
+    width:fit-content;
+    margin:20px auto;
+    padding:10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    color:white;
+    background-color: #248277;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition-duration: 0.25s;
+}
+a:hover{
+    background-color: #036666;
+}
+span{
+    display: flex;
+    justify-content: space-between;
 
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (this.readyState === 4 && this.status === 200) {
-            const passwordFromFile = this.responseText.trim();
+}
+a{
+    text-decoration: none;
+    color:#99e2b4;
+}
+span>span>a{
+    margin:0px 5px
+}
+a:hover{
+    color: #06d6a0;
+}
 
-            if (passwordInput === passwordFromFile) {
-              document.getElementById("content").style.display = "block";
-              return false; 
-            } else {
-              alert("Incorrect password, please try again.");
-             
-              document.getElementById("content").style.display = "none";
-              return false; 
-            }
-          }
-        };
-        xhr.open("GET", "842982498428249842904289.txt");
-        xhr.send();
+  </style>
+</body>
 
-        return false; 
-      }
-
-      function openDiscord() {
-        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley', '_blank');
-      }
-    </script>
-  </body>
 </html>
